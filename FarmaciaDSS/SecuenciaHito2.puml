@@ -1,0 +1,33 @@
+@startuml
+Cliente --> Menu: Abrir Aplicación
+Menu --> "carrito:Compra": crear ()
+Menu --> Cliente: Mostrar Pantalla Menú Principal
+Cliente --> Menu: Opción Seleccionada (pantalla)
+Menu --> Cliente: [pantalla = 3] Mostrar Pantalla Compra
+Cliente --> Menu: Opción Seleccionada (option)
+Menu --> Cliente: [option = 1] Añadir al carrito
+Cliente --> Menu: Introducir nombre de medicamento (nombre) 
+Menu --> BuscarMed: Buscarpornombre (nombre)
+BuscarMed --> Medicamento: med = Buscarpornombre (nombre)
+BuscarMed --> Menu: Devolver medicamento (med)
+Menu --> "carrito:Compra": meterCarrito (med)
+Menu --> Cliente: [option = 2] Sacar del carrito
+Cliente --> Menu: Introducir nombre de medicamento (nombre) 
+Menu --> BuscarMed: Buscarpornombre (nombre)
+BuscarMed --> Medicamento: med = Buscarpornombre (nombre)
+BuscarMed --> Menu: Devolver medicamento (med)
+Menu --> "carrito:Compra": sacarCarrito (med)
+Menu --> "carrito:Compra": [option = 3] Mostrar carrito
+"carrito:Compra" --> Medicamento: Mostrar nombre Medicament0 (med)
+Medicamento --> Menu: getNombre (med)
+Menu --> Cliente: Imprimir nombre Medicamento (med)
+Menu --> Cliente: [option = 4] Finalizar compra
+Menu --> "carrito:Compra": finCompra()
+"carrito:Compra" --> Medicamento: Mostrar nombre Medicament0 (med)
+Medicamento --> Menu: getNombre (med)
+Menu --> Cliente: Imprimir nombre Medicamento (med)
+Menu --> "carrito:Compra": Generar PDF
+"carrito:Compra" --> GeneratePDF: generar(carrito, numTickets)
+GeneratePDF --> Cliente: Ticket generado
+Menu --> Cliente: [option = 5] Salir
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+Cliente --> Menu: Abrir Aplicación
+Menu --> Cliente: Mostrar Pantalla Menú Principal
+Cliente --> Menu: Opción Seleccionada (pantalla)
+Menu --> Cliente: [pantalla = 1] Mostrar Pantalla Buscar Medicamentos
+Cliente --> Menu: Opción Seleccionada (option)
+Menu --> Cliente: [option = 1] Pedir nombre de medicamento
+Cliente --> Menu: Introducir nombre de medicamento (nombre) 
+Menu --> BuscarMed: Buscarpornombre (nombre)
+BuscarMed --> Medicamento: med = Buscarpornombre (nombre)
+BuscarMed --> Menu: Devolver medicamento (med)
+Menu --> Cliente: Mostrar datos medicamento
+Menu --> Cliente: [option = 2] Pedir categoria de medicamento
+Cliente --> Menu: Introducir categoria de medicamento (categoria) 
+Menu --> BuscarMed: Buscarporcategoria (categoria)
+BuscarMed --> Medicamento: meds[] = Buscarporcategoria (categoria)
+BuscarMed --> Menu: Devolver lista de medicamentos (meds)
+Menu --> Cliente: Mostrar lista medicamentos
+Cliente --> Menu: Seleccionar medicamento (índice)
+Menu --> Cliente: Imprimir datos medicamento
+Menu --> Cliente: [option = 3] Pedir principio activo de medicamento
+Cliente --> Menu: Introducir principio activo de medicamento (pActivo) 
+Menu --> BuscarMed: Buscarporpactivo (pActivo)
+BuscarMed --> Medicamento: meds[] = Buscarporpactivo (pActivo)
+BuscarMed --> Menu: Devolver lista de medicamentos (meds)
+Menu --> Cliente: Mostrar lista medicamentos
+Cliente --> Menu: Seleccionar medicamento (índice)
+Menu --> Cliente: Imprimir datos medicamento
+@enduml

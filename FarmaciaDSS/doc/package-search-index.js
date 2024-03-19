@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"es.uca.farmacia"},{"l":"es.uca.farmacia.api"},{"l":"es.uca.farmacia.database"},{"l":"es.uca.farmacia.notificaciones"},{"l":"es.uca.farmacia.repositorio"},{"l":"es.uca.farmacia.Swagger"}];updateSearchResults();
